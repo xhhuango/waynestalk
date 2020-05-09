@@ -1,0 +1,9 @@
+{
+    "Simulator Target Bundle": "com.waynestalk.PushNotificationTest",
+    "aps": {
+        "alert": "Hello Wayne's Talk!",
+        "sound": "default",
+        "badge": 1
+    }
+}
+
