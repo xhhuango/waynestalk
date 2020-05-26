@@ -9,13 +9,11 @@
 import SwiftUI
 
 struct ProductListView: View {
-    let products = [
-        Product(name: "Capuccino", price: 30),
-        Product(name: "Amenicano", price: 25),
-    ]
+    @FetchRequest(entity: Product.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: false)])
+    var products: FetchedResults<Product>
 
     var body: some View {
-        List(products, id: \.id) { product in
+        List(products, id: \Product.id) { product in
             ProductRowView(product: product)
         }
             .navigationBarTitle("商品列表")

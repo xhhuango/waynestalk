@@ -13,11 +13,11 @@ struct ProductRowView: View {
     
     var body: some View {
         HStack() {
-            Text(product.name)
+            Text(product.name ?? "商品未命名")
                 .font(.custom("Georgia", size: 20))
                 .foregroundColor(Color("MenuTextColor"))
             Spacer()
-            Text(String(format: "%.2f $", product.price))
+            Text(String(format: "$ %.2f", product.price))
                 .font(.custom("Georgia", size: 20))
                 .foregroundColor(Color("MenuTextColor"))
         }
@@ -27,7 +27,15 @@ struct ProductRowView: View {
 }
 
 struct ProductRowView_Previews: PreviewProvider {
+    private static var product: Product {
+        let product = Product()
+        product.id = UUID()
+        product.name = "美式咖啡"
+        product.price = 25
+        return product
+    }
+
     static var previews: some View {
-        ProductRowView(product: Product(name: "Capuccino", price: 30))
+        ProductRowView(product: product)
     }
 }

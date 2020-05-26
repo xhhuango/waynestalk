@@ -9,8 +9,13 @@
 import SwiftUI
 
 struct AddProductView: View {
+    @Environment(\.managedObjectContext) var context
+    @Environment(\.presentationMode) var presentationMode
+
     @State var name: String = ""
     @State var price: String = ""
+
+    @State var isFailed = false
 
     var body: some View {
         VStack {
@@ -30,7 +35,11 @@ struct AddProductView: View {
                 .padding()
 
             Button(action: {
-
+                let isSuccessful = self.addProduct()
+                self.isFailed = !isSuccessful
+                if isSuccessful {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }, label: { Text("新增") })
                 .padding()
                 .frame(maxWidth: .infinity)
@@ -39,10 +48,35 @@ struct AddProductView: View {
                 .cornerRadius(30)
                 .font(.headline)
                 .padding()
+                .alert(isPresented: $isFailed) {
+                    Alert(title: Text("輸入的商品資料有誤"), dismissButton: .default(Text("OK")))
+                }
 
             Spacer()
         }
             .navigationBarTitle("新增商品")
+    }
+
+    private func addProduct() -> Bool {
+        guard !name.isEmpty else {
+            return false
+        }
+        guard let parsedPrice = Double(price) else {
+            return false
+        }
+
+        let product = Product(context: context)
+        product.id = UUID()
+        product.name = name
+        product.price = parsedPrice
+
+        do {
+            try context.save()
+            return true
+        } catch {
+            print("\(error)")
+            return false
+        }
     }
 }
 
