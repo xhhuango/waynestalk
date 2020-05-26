@@ -9,17 +9,34 @@
 import SwiftUI
 
 struct ProductListView: View {
+    @Environment(\.managedObjectContext) var context
+
     @FetchRequest(entity: Product.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: false)])
     var products: FetchedResults<Product>
 
     var body: some View {
-        List(products, id: \Product.id) { product in
-            ProductRowView(product: product)
+        List {
+            ForEach(products, id: \Product.id) { product in
+                ProductRowView(product: product)
+            }
+                .onDelete(perform: delete)
         }
             .navigationBarTitle("商品列表")
             .navigationBarItems(trailing: NavigationLink(destination: AddProductView()) {
                 Image(systemName: "plus")
             })
+    }
+
+    private func delete(at offsets: IndexSet) {
+        for index in offsets {
+            context.delete(products[index])
+        }
+
+        do {
+            try context.save()
+        } catch {
+            print("\(error)")
+        }
     }
 }
 
