@@ -21,7 +21,6 @@ struct ProductRowView: View {
                 .font(.custom("Georgia", size: 20))
                 .foregroundColor(Color("MenuTextColor"))
         }
-        .padding(72.0)
         .frame(height: 44.0)
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
     }

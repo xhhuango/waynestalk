@@ -9,11 +9,19 @@
 import SwiftUI
 
 struct ProductListView: View {
+    let products = [
+        Product(name: "Capuccino", price: 30),
+        Product(name: "Amenicano", price: 25),
+    ]
+
     var body: some View {
-        VStack {
-            Text("Product List")
+        List(products, id: \.id) { product in
+            ProductRowView(product: product)
         }
-        .navigationBarTitle("Merchant")
+            .navigationBarTitle("商品列表")
+            .navigationBarItems(trailing: NavigationLink(destination: AddProductView()) {
+                Image(systemName: "plus")
+            })
     }
 }
 

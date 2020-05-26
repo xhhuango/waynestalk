@@ -10,17 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            TabView {
+        TabView {
+            NavigationView {
                 ProductListView()
-                    .tabItem {
-                        Text("Merchant")
-                    }
-                MenuView()
-                    .tabItem {
-                        Text("Customer")
-                    }
             }
+                .tabItem {
+                    Text("店家")
+                }
+            
+            NavigationView {
+                MenuView()
+            }
+                .tabItem {
+                    Text("客人")
+                }
         }
     }
 }
