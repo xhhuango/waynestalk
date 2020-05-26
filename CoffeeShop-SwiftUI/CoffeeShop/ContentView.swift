@@ -15,13 +15,15 @@ struct ContentView: View {
                 ProductListView()
             }
                 .tabItem {
+                    Image("ShopIcon")
                     Text("店家")
                 }
-            
+
             NavigationView {
                 MenuView()
             }
                 .tabItem {
+                    Image("OpenIcon")
                     Text("客人")
                 }
         }
