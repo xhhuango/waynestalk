@@ -10,15 +10,25 @@ import SwiftUI
 
 struct OrderRowView: View {
     let order: Order
+    let onIncrement: (Order) -> Void
+    let onDecrement: (Order) -> Void
 
     var body: some View {
-        HStack {
-            Text(order.name)
-                .font(.custom("Georgia", size: 20))
-            Spacer()
-            Text(String(format: "$ %.2f", order.price))
-                .font(.custom("Georgia", size: 20))
-            Text(String(format: "%d", order.quantity))
+        Stepper(onIncrement: {
+            self.onIncrement(self.order)
+        }, onDecrement: {
+            self.onDecrement(self.order)
+        }) {
+            HStack {
+                Text(order.name)
+                    .font(.custom("Georgia", size: 20))
+                Spacer()
+                Text(String(format: "$ %.2f", order.price))
+                    .font(.custom("Georgia", size: 20))
+                Text(String(format: "%d", order.quantity))
+                    .frame(minWidth: 44)
+            }
+
         }
             .frame(height: 44)
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -31,6 +41,6 @@ struct OrderRowView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        OrderRowView(order: order)
+        OrderRowView(order: order, onIncrement: { _ in }, onDecrement: { _ in })
     }
 }

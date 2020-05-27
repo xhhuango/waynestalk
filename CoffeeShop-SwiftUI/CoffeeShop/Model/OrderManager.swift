@@ -31,7 +31,29 @@ final class OrderManager: ObservableObject {
             return
         }
 
-        if orders[index].decreased() == nil {
+        if let order = orders[index].decreased() {
+            orders[index] = order
+        } else {
+            orders.remove(at: index)
+        }
+    }
+
+    func add(order: Order) {
+        guard let index = orders.firstIndex(where: { $0.id == order.id }) else {
+            return
+        }
+
+        orders[index] = orders[index].increased()
+    }
+
+    func remove(order: Order) {
+        guard let index = orders.firstIndex(where: { $0.id == order.id }) else {
+            return
+        }
+
+        if let order = orders[index].decreased() {
+            orders[index] = order
+        } else {
             orders.remove(at: index)
         }
     }

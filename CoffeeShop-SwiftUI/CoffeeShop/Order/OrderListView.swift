@@ -12,11 +12,34 @@ struct OrderListView: View {
     @ObservedObject var manager = OrderManager.shared
 
     var body: some View {
-        List {
-            ForEach(manager.orders, id: \.id) { order in
-                OrderRowView(order: order)
+        VStack {
+            List {
+                ForEach(manager.orders, id: \.id) { order in
+                    OrderRowView(order: order, onIncrement: { order in
+                        self.manager.add(order: order)
+                    }, onDecrement: { order in
+                        self.manager.remove(order: order)
+                    })
+                }
             }
+
+            HStack {
+                Text("總計")
+                    .font(.system(size: 22))
+                Spacer()
+                Text(String(format: "$ %.2f", total()))
+                    .font(.custom("Georgia", size: 22))
+            }
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+                .padding()
         }
+    }
+
+    private func total() -> Double {
+        manager.orders.reduce(0, { total, order in
+            total + order.price * Double(order.quantity)
+        })
+
     }
 }
 

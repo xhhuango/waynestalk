@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selection = 1
-
     var body: some View {
-        TabView(selection: $selection) {
+        TabView {
             NavigationView {
                 ProductListView()
             }
@@ -20,22 +18,18 @@ struct ContentView: View {
                     Image("ShopIcon")
                     Text("店家")
                 }
-                .tag(0)
-
 
             MenuView()
                 .tabItem {
                     Image("MenuIcon")
                     Text("菜單")
                 }
-                .tag(1)
 
             OrderListView()
                 .tabItem {
                     Image("OrderIcon")
-                    Text("點單")
+                    Text("帳單")
                 }
-                .tag(2)
         }
     }
 }
