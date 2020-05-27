@@ -20,6 +20,10 @@
 		B021627A247B7AD2000C244C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0216279247B7AD2000C244C /* MenuView.swift */; };
 		B0216282247B7DC6000C244C /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0216281247B7DC6000C244C /* ProductRowView.swift */; };
 		B065624B247E10D70099CB83 /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065624A247E10D70099CB83 /* MenuRowView.swift */; };
+		B065624E247E23190099CB83 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065624D247E23190099CB83 /* OrderListView.swift */; };
+		B0656250247E23280099CB83 /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065624F247E23280099CB83 /* OrderRowView.swift */; };
+		B0656252247E23790099CB83 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0656251247E23790099CB83 /* OrderManager.swift */; };
+		B0656254247E32820099CB83 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0656253247E32820099CB83 /* Order.swift */; };
 		B0FA4972247CBF860099C0BD /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA4971247CBF860099C0BD /* AddProductView.swift */; };
 		B0FA4975247CCF840099C0BD /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA4973247CCF840099C0BD /* Product+CoreDataClass.swift */; };
 		B0FA4978247CD0660099C0BD /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA4977247CD0660099C0BD /* Product+CoreDataProperties.swift */; };
@@ -63,6 +67,10 @@
 		B0216279247B7AD2000C244C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		B0216281247B7DC6000C244C /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
 		B065624A247E10D70099CB83 /* MenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
+		B065624D247E23190099CB83 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		B065624F247E23280099CB83 /* OrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRowView.swift; sourceTree = "<group>"; };
+		B0656251247E23790099CB83 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
+		B0656253247E32820099CB83 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B0FA4971247CBF860099C0BD /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		B0FA4973247CCF840099C0BD /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B0FA4977247CD0660099C0BD /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -117,9 +125,10 @@
 		B0216241247B6302000C244C /* CoffeeShop */ = {
 			isa = PBXGroup;
 			children = (
+				B065624C247E22E40099CB83 /* Order */,
 				B021627E247B7D1C000C244C /* Model */,
-				B0216276247B7A50000C244C /* Customer */,
-				B0216275247B7A41000C244C /* Merchant */,
+				B0216276247B7A50000C244C /* Menu */,
+				B0216275247B7A41000C244C /* Product */,
 				B0216242247B6302000C244C /* AppDelegate.swift */,
 				B0216244247B6302000C244C /* SceneDelegate.swift */,
 				B0216249247B6302000C244C /* ContentView.swift */,
@@ -158,7 +167,7 @@
 			path = CoffeeShopUITests;
 			sourceTree = "<group>";
 		};
-		B0216275247B7A41000C244C /* Merchant */ = {
+		B0216275247B7A41000C244C /* Product */ = {
 			isa = PBXGroup;
 			children = (
 				B0216277247B7ABE000C244C /* ProductListView.swift */,
@@ -166,25 +175,36 @@
 				B0FA4971247CBF860099C0BD /* AddProductView.swift */,
 				B0FA4979247D3F740099C0BD /* EditProductView.swift */,
 			);
-			path = Merchant;
+			path = Product;
 			sourceTree = "<group>";
 		};
-		B0216276247B7A50000C244C /* Customer */ = {
+		B0216276247B7A50000C244C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				B0216279247B7AD2000C244C /* MenuView.swift */,
 				B065624A247E10D70099CB83 /* MenuRowView.swift */,
 			);
-			path = Customer;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		B021627E247B7D1C000C244C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B0656251247E23790099CB83 /* OrderManager.swift */,
 				B0FA4977247CD0660099C0BD /* Product+CoreDataProperties.swift */,
 				B0FA4973247CCF840099C0BD /* Product+CoreDataClass.swift */,
+				B0656253247E32820099CB83 /* Order.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B065624C247E22E40099CB83 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				B065624D247E23190099CB83 /* OrderListView.swift */,
+				B065624F247E23280099CB83 /* OrderRowView.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +339,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B021627A247B7AD2000C244C /* MenuView.swift in Sources */,
+				B065624E247E23190099CB83 /* OrderListView.swift in Sources */,
+				B0656254247E32820099CB83 /* Order.swift in Sources */,
 				B0FA497A247D3F740099C0BD /* EditProductView.swift in Sources */,
 				B0216243247B6302000C244C /* AppDelegate.swift in Sources */,
 				B0FA4978247CD0660099C0BD /* Product+CoreDataProperties.swift in Sources */,
@@ -326,9 +348,11 @@
 				B0FA4975247CCF840099C0BD /* Product+CoreDataClass.swift in Sources */,
 				B0FA4972247CBF860099C0BD /* AddProductView.swift in Sources */,
 				B0216282247B7DC6000C244C /* ProductRowView.swift in Sources */,
+				B0656252247E23790099CB83 /* OrderManager.swift in Sources */,
 				B0216278247B7ABE000C244C /* ProductListView.swift in Sources */,
 				B0216245247B6302000C244C /* SceneDelegate.swift in Sources */,
 				B021624A247B6302000C244C /* ContentView.swift in Sources */,
+				B0656250247E23280099CB83 /* OrderRowView.swift in Sources */,
 				B0216248247B6302000C244C /* CoffeeShop.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

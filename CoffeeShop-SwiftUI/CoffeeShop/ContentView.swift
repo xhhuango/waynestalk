@@ -22,19 +22,20 @@ struct ContentView: View {
                 }
                 .tag(0)
 
-            NavigationView {
-                GeometryReader { proxy in
-                    MenuView()
-                        .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
-                }
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-            }
+
+            MenuView()
                 .tabItem {
-                    Image("OpenIcon")
-                    Text("客人")
+                    Image("MenuIcon")
+                    Text("菜單")
                 }
                 .tag(1)
+
+            OrderListView()
+                .tabItem {
+                    Image("OrderIcon")
+                    Text("點單")
+                }
+                .tag(2)
         }
     }
 }

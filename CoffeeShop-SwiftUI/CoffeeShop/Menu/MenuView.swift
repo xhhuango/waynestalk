@@ -19,18 +19,19 @@ struct MenuView: View {
     }
 
     var body: some View {
-        ZStack {
-            Image("MenuBackground")
-                .resizable()
+        GeometryReader { proxy in
+            ZStack {
+                Image("MenuBackground")
+                    .resizable()
 
-            GeometryReader { proxy in
                 List {
                     ForEach(self.products, id: \.id) { product in
                         MenuRowView(product: product)
                     }
                 }
-                .frame(width: proxy.size.width * 0.75, height: proxy.size.height * 0.65)
+                    .frame(width: proxy.size.width * 0.75, height: proxy.size.height * 0.65)
             }
+                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
         }
     }
 }

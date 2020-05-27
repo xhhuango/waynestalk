@@ -10,19 +10,17 @@ import SwiftUI
 
 struct ProductRowView: View {
     let product: Product
-    
+
     var body: some View {
         HStack {
             Text(product.name ?? "")
                 .font(.custom("Georgia", size: 20))
-                .foregroundColor(Color("MenuTextColor"))
             Spacer()
             Text(String(format: "$ %.2f", product.price))
                 .font(.custom("Georgia", size: 20))
-                .foregroundColor(Color("MenuTextColor"))
         }
-        .frame(height: 44)
-        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            .frame(height: 44)
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
     }
 }
 
