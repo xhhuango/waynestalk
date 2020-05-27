@@ -56,10 +56,10 @@ struct EditProductView: View {
             Spacer()
         }
             .navigationBarTitle("修改商品")
-            .onAppear(perform: onApear)
+            .onAppear(perform: onAppear)
     }
     
-    private func onApear() {
+    private func onAppear() {
         name = product.name ?? ""
         price = product.price < 0 ? "" : String(product.price)
     }

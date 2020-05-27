@@ -16,7 +16,7 @@ struct ProductListView: View {
 
     var body: some View {
         List {
-            ForEach(products, id: \Product.id) { product in
+            ForEach(products, id: \.id) { product in
                 NavigationLink(destination: EditProductView(product: product)) {
                     ProductRowView(product: product)
                 }

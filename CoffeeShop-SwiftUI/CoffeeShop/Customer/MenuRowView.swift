@@ -1,32 +1,32 @@
 //
-//  ProductRowView.swift
+//  MenuRowView.swift
 //  CoffeeShop
 //
-//  Created by Wayne on 2020/5/25.
+//  Created by Wayne on 2020/5/27.
 //  Copyright © 2020 WaynesTalk. All rights reserved.
 //
 
 import SwiftUI
 
-struct ProductRowView: View {
+struct MenuRowView: View {
     let product: Product
-    
+
     var body: some View {
         HStack {
             Text(product.name ?? "")
-                .font(.custom("Georgia", size: 20))
+                .font(.custom("Georgia", size: 24))
                 .foregroundColor(Color("MenuTextColor"))
             Spacer()
             Text(String(format: "$ %.2f", product.price))
-                .font(.custom("Georgia", size: 20))
+                .font(.custom("Georgia", size: 24))
                 .foregroundColor(Color("MenuTextColor"))
         }
-        .frame(height: 44)
-        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            .frame(height: 36)
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
     }
 }
 
-struct ProductRowView_Previews: PreviewProvider {
+struct MenuRowView_Previews: PreviewProvider {
     private static var product: Product {
         let product = Product()
         product.id = UUID()
@@ -36,6 +36,6 @@ struct ProductRowView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        ProductRowView(product: product)
+        MenuRowView(product: product)
     }
 }

@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selection = 1
+
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             NavigationView {
                 ProductListView()
             }
@@ -18,14 +20,21 @@ struct ContentView: View {
                     Image("ShopIcon")
                     Text("店家")
                 }
+                .tag(0)
 
             NavigationView {
-                MenuView()
+                GeometryReader { proxy in
+                    MenuView()
+                        .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
+                }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
             }
                 .tabItem {
                     Image("OpenIcon")
                     Text("客人")
                 }
+                .tag(1)
         }
     }
 }
