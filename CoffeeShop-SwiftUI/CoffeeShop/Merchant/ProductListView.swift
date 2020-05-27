@@ -17,7 +17,9 @@ struct ProductListView: View {
     var body: some View {
         List {
             ForEach(products, id: \Product.id) { product in
-                ProductRowView(product: product)
+                NavigationLink(destination: EditProductView(product: product)) {
+                    ProductRowView(product: product)
+                }
             }
                 .onDelete(perform: delete)
         }
