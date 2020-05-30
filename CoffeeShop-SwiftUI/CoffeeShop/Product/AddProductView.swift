@@ -20,15 +20,15 @@ struct AddProductView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("品名：")
-                TextField("輸入商品名稱", text: $name)
+                Text("Product name：")
+                TextField("Input product name", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
                 .padding()
 
             HStack {
-                Text("價格：")
-                TextField("輸入商品價格", text: $price)
+                Text("Price：")
+                TextField("Input price", text: $price)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad)
             }
@@ -40,7 +40,7 @@ struct AddProductView: View {
                 if isSuccessful {
                     self.presentationMode.wrappedValue.dismiss()
                 }
-            }, label: { Text("新增") })
+            }, label: { Text("Add") })
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color("ButtonColor"))
@@ -49,12 +49,12 @@ struct AddProductView: View {
                 .font(.headline)
                 .padding()
                 .alert(isPresented: $isFailed) {
-                    Alert(title: Text("輸入的商品資料有誤"), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Input data is incorrect"), dismissButton: .default(Text("OK")))
                 }
 
             Spacer()
         }
-            .navigationBarTitle("新增商品")
+            .navigationBarTitle("Add a product")
     }
 
     private func addProduct() -> Bool {

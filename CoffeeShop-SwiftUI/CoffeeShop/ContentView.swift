@@ -16,19 +16,19 @@ struct ContentView: View {
             }
                 .tabItem {
                     Image("ShopIcon")
-                    Text("店家")
+                    Text("Shop")
                 }
 
             MenuView()
                 .tabItem {
                     Image("MenuIcon")
-                    Text("菜單")
+                    Text("Menu")
                 }
 
             OrderListView()
                 .tabItem {
                     Image("OrderIcon")
-                    Text("帳單")
+                    Text("Bill")
                 }
         }
     }

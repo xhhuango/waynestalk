@@ -21,15 +21,15 @@ struct EditProductView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("品名：")
-                TextField("輸入商品名稱", text: $name)
+                Text("Product Name：")
+                TextField("Input product name", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
                 .padding()
 
             HStack {
-                Text("價格：")
-                TextField("輸入商品價格", text: $price)
+                Text("Price：")
+                TextField("Input price", text: $price)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad)
             }
@@ -41,7 +41,7 @@ struct EditProductView: View {
                 if isSuccessful {
                     self.presentationMode.wrappedValue.dismiss()
                 }
-            }, label: { Text("修改") })
+            }, label: { Text("Edit") })
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color("ButtonColor"))
@@ -50,12 +50,12 @@ struct EditProductView: View {
                 .font(.headline)
                 .padding()
                 .alert(isPresented: $isFailed) {
-                    Alert(title: Text("輸入的商品資料有誤"), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Input data is incorrect"), dismissButton: .default(Text("OK")))
                 }
 
             Spacer()
         }
-            .navigationBarTitle("修改商品")
+            .navigationBarTitle("Edit a product")
             .onAppear(perform: onAppear)
     }
     
@@ -90,7 +90,7 @@ struct EditProductView_Previews: PreviewProvider {
     private static var product: Product {
         let product = Product()
         product.id = UUID()
-        product.name = "美式咖啡"
+        product.name = "Americano"
         product.price = 25
         return product
     }

@@ -28,7 +28,7 @@ struct ProductRowView_Previews: PreviewProvider {
     private static var product: Product {
         let product = Product()
         product.id = UUID()
-        product.name = "美式咖啡"
+        product.name = "Americano"
         product.price = 25
         return product
     }

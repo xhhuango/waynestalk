@@ -29,10 +29,10 @@ struct MenuRowView: View {
             .buttonStyle(PlainButtonStyle())
             .actionSheet(isPresented: self.$showingActionSheet) {
                 ActionSheet(title: Text(product.name ?? ""), buttons: [
-                    .default(Text("加入")) {
+                    .default(Text("Add")) {
                         OrderManager.shared.add(product: self.product)
                     },
-                    .destructive(Text("取消")),
+                    .destructive(Text("Canel")),
                 ])
             }
             .frame(height: 36)
@@ -44,7 +44,7 @@ struct MenuRowView_Previews: PreviewProvider {
     private static var product: Product {
         let product = Product()
         product.id = UUID()
-        product.name = "美式咖啡"
+        product.name = "Americano"
         product.price = 25
         return product
     }

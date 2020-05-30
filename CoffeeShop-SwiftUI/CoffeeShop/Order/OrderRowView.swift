@@ -37,7 +37,7 @@ struct OrderRowView: View {
 
 struct OrderRowView_Previews: PreviewProvider {
     private static var order: Order {
-        Order(id: UUID(), name: "美式咖啡", price: 25, quantity: 1)
+        Order(id: UUID(), name: "Americano", price: 25, quantity: 1)
     }
 
     static var previews: some View {

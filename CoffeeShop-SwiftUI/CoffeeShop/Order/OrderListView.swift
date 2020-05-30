@@ -24,7 +24,7 @@ struct OrderListView: View {
             }
 
             HStack {
-                Text("總計")
+                Text("Total")
                     .font(.system(size: 22))
                 Spacer()
                 Text(String(format: "$ %.2f", total()))

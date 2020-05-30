@@ -23,7 +23,7 @@ struct ProductListView: View {
             }
                 .onDelete(perform: delete)
         }
-            .navigationBarTitle("商品列表")
+            .navigationBarTitle("Product List")
             .navigationBarItems(trailing: NavigationLink(destination: AddProductView()) {
                 Image(systemName: "plus")
             })
