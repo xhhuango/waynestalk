@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es6",
+    "declaration": true,
+    "sourceMap": false,
+    "outDir": "./lib",
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "allowJs": false,
+    "moduleResolution": "node",
+    "strict": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
