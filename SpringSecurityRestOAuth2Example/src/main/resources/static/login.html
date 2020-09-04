@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+    <script>
+        function renderButton() {
+            gapi.load('auth2', function () {
+                auth2 = gapi.auth2.init({
+                    client_id: '63245096424-6nn16rjn23h8p11g8bkp2aogl4kqneuc.apps.googleusercontent.com',
+                    scope: 'profile email',
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+<button id="signInButton" onclick="onClickSignIn()">Sign in with Google</button>
+<button onclick="onClickAdmin()">Admin Endpoint</button>
+<button onclick="onClickUser()">User Endpoint</button>
+<script>
+    let token;
+
+    function onSuccess(result) {
+        console.log(result);
+
+        authenticate(result.code)
+            .then(res => {
+                token = res.data.token;
+                console.log(res);
+            })
+            .catch(console.log);
+    }
+
+    function authenticate(code) {
+        return axios.post('http://localhost:8080/auth/google', JSON.stringify({code}));
+    }
+
+    function callEndpoint(uri, token) {
+        return axios.get(`http://localhost:8080/${uri}`, {headers: {Authorization: `Bearer ${token}`}});
+    }
+
+    function onFailure(error) {
+        console.log(error);
+    }
+
+    function onClickSignIn() {
+        auth2.grantOfflineAccess()
+            .then(onSuccess)
+            .catch(onFailure);
+    }
+
+    function onClickAdmin() {
+        callEndpoint('admin', token)
+            .then(console.log)
+            .catch(console.log)
+    }
+
+    function onClickUser() {
+        callEndpoint('user', token)
+            .then(console.log)
+            .catch(console.log)
+    }
+</script>
+</body>
+</html>

@@ -97,3 +97,6 @@ iOSInjectionProject/
 # Node.js
 node_modules/
 dist/
+
+# Gradle
+.gradle
