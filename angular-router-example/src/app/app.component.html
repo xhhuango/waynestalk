@@ -1,0 +1,17 @@
+<h1>App</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/food">Food with absolute path</a></li>
+    <li><a routerLink="food">Food with relative path</a></li>
+    <li><a routerLink="/beverage/Pepsi">Beverage with path</a></li>
+    <li><a [routerLink]="['/beverage', 'CocaCola']">Beverage with route parameter</a></li>
+    <li><a (click)="show7Up()">Beverage with router</a></li>
+
+    <li><a [routerLink]="['/food/detail', {price: 10}]">FoodDetail with price by route parameter</a></li>
+    <li><a routerLink="/food/detail" [queryParams]="{size: 20}">FoodDetail with size by query parameter</a></li>
+
+    <li><a [routerLink]="[{outlets: {ads: ['banner']}}]">Banner</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<router-outlet name="ads"></router-outlet>
