@@ -100,3 +100,14 @@ dist/
 
 # Gradle
 .gradle
+
+# Android
+*.iml
+.gradle
+/local.properties
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
