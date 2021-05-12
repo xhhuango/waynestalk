@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "63245096424",
+    "project_id": "waynestalkexample",
+    "storage_bucket": "waynestalkexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63245096424:android:e57bf27aed83ea273e805d",
+        "android_client_info": {
+          "package_name": "com.waynestalk.fcmexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63245096424-0no4dliag70diol3upeb9up9freful7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3ijMMmyfCogH2dbMTHVmmQAlt3Q4DTKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63245096424-0no4dliag70diol3upeb9up9freful7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
