@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/cancel_all_works"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel All Works" />
+
+    <Button
+        android:id="@+id/one_time_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run One Time Work" />
+
+    <Button
+        android:id="@+id/periodic_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run Periodic Work" />
+
+    <Button
+        android:id="@+id/one_time_work_with_network_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run One Time Work with Network Constraint" />
+
+    <Button
+        android:id="@+id/unique_one_time_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run Unique One Time Work" />
+
+    <Button
+        android:id="@+id/retry_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run Retry Work" />
+
+    <Button
+        android:id="@+id/chain_multiple_works"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run Chaining Multiple Works" />
+
+</LinearLayout>
