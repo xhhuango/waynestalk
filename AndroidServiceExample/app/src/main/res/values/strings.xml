@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ServiceExample</string>
+    <string name="download_with_start_command">Download with StartCommand</string>
+    <string name="download_with_foreground_service">Download with Foreground Service</string>
+</resources>
