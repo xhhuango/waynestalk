@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidBoundServiceClientExample</string>
+    <string name="start_with_remote_bound_service">Start with Remote Bound Service</string>
+</resources>

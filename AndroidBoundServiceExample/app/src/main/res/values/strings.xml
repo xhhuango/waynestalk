@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android Bound Service Example</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="start_with_bound_service">Start with Bound Service</string>
+    <string name="start_with_remote_bound_service">Start with Remote Bound Service</string>
+</resources>
