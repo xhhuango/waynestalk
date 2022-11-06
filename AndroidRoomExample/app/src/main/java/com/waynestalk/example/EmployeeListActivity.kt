@@ -44,6 +44,13 @@ class EmployeeListActivity : AppCompatActivity() {
                 viewModel.searchByName(name)
             }
         }
+
+        binding.searchByNameOptionalButton.setOnClickListener {
+            val name = binding.searchByNameEditText.text?.toString()
+            lifecycleScope.launch {
+                viewModel.searchByNameOptional(name)
+            }
+        }
     }
 
     private fun initRecycleView() {

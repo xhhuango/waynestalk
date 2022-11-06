@@ -64,6 +64,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchByNameLayout" />
 
+    <Button
+        android:id="@+id/searchByNameOptionalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search by name (optional)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchByNameButton" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
@@ -71,6 +80,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchByNameButton" />
+        app:layout_constraintTop_toBottomOf="@id/searchByNameOptionalButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

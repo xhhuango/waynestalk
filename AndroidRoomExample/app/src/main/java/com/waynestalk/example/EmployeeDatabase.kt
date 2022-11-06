@@ -21,14 +21,14 @@ abstract class EmployeeDatabase : RoomDatabase() {
 
         fun getInstance(context: Context, path: String, password: String): EmployeeDatabase {
             return INSTANCE ?: synchronized(this) {
-                val supportFactory = SupportFactory(SQLiteDatabase.getBytes(password.toCharArray()))
+//                val supportFactory = SupportFactory(SQLiteDatabase.getBytes(password.toCharArray()))
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     EmployeeDatabase::class.java,
                     path,
                 )
 //                    .allowMainThreadQueries()
-                    .openHelperFactory(supportFactory)
+//                    .openHelperFactory(supportFactory)
                     .setQueryCallback({ sqlQuery, bindArgs ->
                         println("SQL: $sqlQuery; Args: $bindArgs")
                     }, Executors.newSingleThreadExecutor())

@@ -28,4 +28,9 @@ class EmployeeListViewModel : ViewModel() {
         val list = if (name.isEmpty()) database.dao().findAll() else database.dao().findByName(name)
         employees.postValue(list)
     }
+
+    suspend fun searchByNameOptional(name: String?) = withContext(Dispatchers.IO) {
+        val list = database.dao().findByNameOptional(if (name?.isEmpty() == true) null else name)
+        employees.postValue(list)
+    }
 }
