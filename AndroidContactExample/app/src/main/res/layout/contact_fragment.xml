@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTitleTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="EMail"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/homeEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Home"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removeHomeEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editHomeEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintEnd_toStartOf="@id/removeHomeEmailButton"
+        app:layout_constraintTop_toBottomOf="@id/homeEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/homeEmailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/editHomeEmailButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/workEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Work"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeEmailEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removeWorkEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/workEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editWorkEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintEnd_toStartOf="@id/removeWorkEmailButton"
+        app:layout_constraintTop_toBottomOf="@id/workEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/workEmailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/editWorkEmailButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/workEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mobileEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Mobile"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/workEmailEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removeMobileEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editMobileEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintEnd_toStartOf="@id/removeMobileEmailButton"
+        app:layout_constraintTop_toBottomOf="@id/mobileEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/mobileEmailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/editMobileEmailButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/otherEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Other"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileEmailEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removeOtherEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otherEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editOtherEmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintEnd_toStartOf="@id/removeOtherEmailButton"
+        app:layout_constraintTop_toBottomOf="@id/otherEmailTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/otherEmailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/editOtherEmailButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otherEmailTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
