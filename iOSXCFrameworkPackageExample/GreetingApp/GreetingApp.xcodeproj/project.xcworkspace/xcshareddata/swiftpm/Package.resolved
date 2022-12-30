@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "greetinguisdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xhhuango/GreetingUISDK",
+      "state" : {
+        "revision" : "d77fc8ab51cd05858ad2cc5d93757143bad5c231",
+        "version" : "5.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
