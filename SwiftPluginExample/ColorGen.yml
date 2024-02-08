@@ -1,0 +1,9 @@
+input_dir: ${TARGET_DIR}
+output_dir: ${DERIVED_SOURCES_DIR}
+
+xcassets:
+  inputs:
+    - Colors.xcassets
+  outputs:
+    templateName: swift5
+    output: Colors.swift
