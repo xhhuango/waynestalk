@@ -1,0 +1,5 @@
+path: /Users/wayne/Workspace/waynestalk/YOLOv8Example/datasets
+train: train/images
+val: val/images
+nc: 1
+names: [ "Baby Penguin" ]
