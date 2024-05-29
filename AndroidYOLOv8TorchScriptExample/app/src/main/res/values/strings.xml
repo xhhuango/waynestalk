@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidYOLOv8TorchScriptExample</string>
+
+    <string name="infer">Infer</string>
+</resources>
