@@ -29,7 +29,7 @@ class AppViewModel : ViewModel() {
 
     fun load(assets: AssetManager) {
         viewModelScope.launch(Dispatchers.IO) {
-            module = LitePyTorchAndroid.loadModuleFromAsset(assets, "baby_pengiun.torchscript")
+            module = LitePyTorchAndroid.loadModuleFromAsset(assets, "baby_penguin.torchscript")
 
             assets.open("image.jpg").use {
                 _uiState.value = AppUiState(Bitmap.createBitmap(BitmapFactory.decodeStream(it)))
