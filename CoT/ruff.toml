@@ -1,0 +1,22 @@
+target-version = "py314"
+line-length = 120
+fix = true
+preview = true
+
+[lint.mccabe]
+max-complexity = 10
+
+[lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+order-by-type = true
+
+[lint.pydocstyle]
+convention = "google"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+docstring-code-line-length = 88
