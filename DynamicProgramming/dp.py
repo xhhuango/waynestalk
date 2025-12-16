@@ -3,7 +3,7 @@ import numpy as np
 
 
 class DynamicProgramming:
-    def __init__(self, env: gym.Env, gamma=0.9, theta=1e-9):
+    def __init__(self, env: gym.Env, gamma=1, theta=1e-9):
         self.env = env
         self.gamma = gamma
         self.theta = theta

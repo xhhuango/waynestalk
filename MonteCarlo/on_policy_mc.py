@@ -21,7 +21,7 @@ class OnPolicyMonteCarlo:
     def _update_policy_by_epsilon_greedy(self, pi: np.ndarray, Q: np.ndarray):
         for s in range(self.env.observation_space.n):
             A = np.ones(self.env.action_space.n, dtype=float) * self.epsilon / self.env.action_space.n
-            A_star = np.argmax(Q[s])
+            A_start = self._random_argmax(Q[s])
             A[A_star] += 1.0 - self.epsilon
             pi[s] = A
 
