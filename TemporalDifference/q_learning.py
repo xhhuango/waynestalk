@@ -17,8 +17,7 @@ class QLearning:
         if np.random.rand() < self.epsilon:
             return np.random.choice(self.env.action_space.n)
         else:
-            ties = np.flatnonzero(np.isclose(Q[s], Q[s].max()))
-            return np.random.choice(ties)
+            return self._random_argmax(Q[s])
 
     def _create_pi_by_Q(self, Q: np.ndarray) -> np.ndarray:
         pi = np.zeros((self.env.observation_space.n, self.env.action_space.n), dtype=float)
