@@ -21,10 +21,6 @@ def play_game(policy, episodes=1):
         total_reward = 0
         step_count = 0
 
-        for i in range(10):
-            print(f"Sleep {i}")
-            time.sleep(1)
-
         print(f"Episode {episode + 1} starts")
         while not terminated and not truncated:
             action = np.argmax(policy[state])
